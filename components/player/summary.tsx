@@ -48,7 +48,7 @@ const PLayerSummary = ({ player }: StandingsProps) => {
             <div className="w-full flex flex-col tablet:flex-row space-x-4">
                 <div className="w-full tablet:w-1/2 ">
                     <div className="flex items-center justify-between p-2">
-                        <div className="font-semibold">Average Sofascore rating</div>
+                        <div className="font-semibold">Average Team Wolf rating</div>
                         <div className=" scale-85">
                             {
                                 summary.summary.filter((item) => item.type == 'event').length ?

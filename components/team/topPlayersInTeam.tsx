@@ -16,7 +16,7 @@ import DisplayImage from '@/utils/displayImage'
 
 
 const satisNames: Array<{ name: string, slug: string, type: number }> = [
-    { name: 'Average Sofascore Rating', slug: 'rating', type: 1 },
+    { name: 'Average Team Wolf Rating', slug: 'rating', type: 1 },
     { name: 'Goals', slug: 'goals', type: 2 },
     // { name: 'Expected Goals(xG) - Scored', slug: 'expectedGoals', type: -1 },
     { name: 'Assists', slug: 'assists', type: 2 },

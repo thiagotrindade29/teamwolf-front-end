@@ -16,6 +16,7 @@ const Navbar = () => {
     ]
     const [suggestions, setSuggestions] = useState<Array<any>>([])
     const [currentSearchOption, setCurrentSearchOption] = useState<{ name: string, slug: string }>({ name: 'All', slug: 'all' })
+    const [hoveredItem, setHoveredItem] = useState<string | null>(null);
 
     const [open, setOpen] = useState(false);
     const [windowWidth, setWindowWidth] = useState(1);
@@ -58,18 +59,17 @@ const Navbar = () => {
     return (
         <header className="w-full z-40 top-0 sticky">
             <div className=" max-w-full flex flex-col items-center ">
-                <div className="w-full bg-[#2c3ec4]  px-2   h-[65px] flex justify-center items-center">
+                <div className="w-full bg-[#1b2124]  px-2   h-[65px] flex justify-center items-center">
                     <div className="w-full desktop:w-[1360px] tablet:w-[992px]  ">
-                        <div className=" relative w-full  flex justify-center items-center tablet:h-[64px]">
-                            <Link href=" /" className="h-full w-1/2 ">
+                        <div className=" relative w-full  flex justify-between items-center tablet:h-[64px]">
+                            <Link href="/" className="flex items-center h-full mr-4">
                                 <Image
-                                    className='max-w-[200px] bg-[#2c3ec4]'
-                                    width={300}
-                                    height={50}
-                                    src="/sofa-logo.png"
-                                    alt="logo"
-                                >
-                                </Image>
+                                    className='h-[250px] tablet:h-[110px] w-auto object-contain'
+                                    width={400}
+                                    height={250}
+                                    src="/image/tw-logo.png"
+                                    alt="Team Wolf"
+                                />
                             </Link>
                             <div className=" relative w-[360px] -left-10  desktop:left-0 hidden tablet:block">
                                 <Search
@@ -91,7 +91,7 @@ const Navbar = () => {
                                 </div>
                                 <div className="hidden tablet:flex items-center space-x-1">
                                     <div className="">
-                                        favorites
+                                        favoritos
                                     </div>
                                     <Image width={20} height={20} alt='' className="hidden tablet:block w-5 h-5" src='/image/notification.svg' />
                                 </div>
@@ -103,6 +103,44 @@ const Navbar = () => {
                                 </Link>
                             </div>
                         </div>
+                    </div>
+                </div>
+                <div className="w-full bg-[#1b2124] h-[50px] flex justify-center items-center text-white text-sm">
+                    <div className="w-full desktop:w-[1360px] tablet:w-[992px] flex items-center space-x-1" role="tablist" aria-orientation="horizontal">
+                        {[
+                            { name: 'Em Tendência', emoji: '🔥', badge: null },
+                            { name: 'Futebol', emoji: '⚽', badge: 16, dropdown: true },
+                            { name: 'Vôlei', emoji: '🏐', badge: 2 },
+                            { name: 'Basquete', emoji: '🏀', badge: 8 },
+                            { name: 'Tênis', emoji: '🎾', badge: 1 },
+                            { name: 'MMA', emoji: '🥊', badge: null },
+                            { name: 'Tênis de Mesa', emoji: '🏓', badge: 13 },
+                            { name: 'Futebol Am.', emoji: '🏈', badge: null },
+                            { name: 'Esportes a motor', emoji: '🏎️', badge: null },
+                            { name: 'Mais', emoji: '⋯', badge: null }
+                        ].map((sport, index) => (
+                            <div key={sport.name} className="relative" onMouseEnter={() => sport.dropdown && setHoveredItem(sport.name)} onMouseLeave={() => sport.dropdown && setHoveredItem(null)}>
+                                <a href="#" role="tab" aria-selected={index === 1} tabIndex={index === 1 ? 0 : -1} className={`flex items-center space-x-2 cursor-pointer px-3 py-2 rounded-md ${index === 1 ? 'bg-white text-black' : 'hover:bg-gray-700'}`}>
+                                    <div className="flex items-center space-x-1">
+                                        <span className="text-sm">{sport.emoji}</span>
+                                        {sport.badge && <span className={`text-xs font-light ${index === 1 ? 'text-gray-500' : 'text-gray-400'}`}>{sport.badge}</span>}
+                                    </div>
+                                    <span className="whitespace-nowrap font-sans">{sport.name}</span>
+                                </a>
+                                {sport.dropdown && hoveredItem === sport.name && (
+                                    <div className="absolute top-full left-0 mt-1 w-48 bg-white rounded-md shadow-lg z-10">
+                                        <div className="p-2 text-black">
+                                            <h3 className="font-bold">Principais Ligas</h3>
+                                            <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Brasileirão</a>
+                                            <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Premier League</a>
+                                            <h3 className="font-bold mt-2">Principais Times</h3>
+                                            <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Flamengo</a>
+                                            <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Corinthians</a>
+                                        </div>
+                                    </div>
+                                )}
+                            </div>
+                        ))}
                     </div>
                 </div>
             </div>

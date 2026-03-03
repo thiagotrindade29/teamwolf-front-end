@@ -4,8 +4,8 @@ const LiveSoccer = () => {
     return (
         <div className="MYDeg w-full bg-[#ffffff] rounded-2xl px-3 py-8 text-sm">
             <p>
-                Live soccer results page on Sofascore offers real-time soccer scores of all live matches that are being
-                played. Sofascore covers hundreds of soccer leagues, cups and tournaments with live updated results,
+                Live soccer results page on Team Wolf offers real-time soccer scores of all live matches that are being
+                played. Team Wolf covers hundreds of soccer leagues, cups and tournaments with live updated results,
                 statistics, league tables, video highlights and fixtures. From most popular soccer leagues (
                 <button className="text-blue-400">UEFA ChampionsLeague</button>,
                 <button className="text-blue-400">Premier League</button>,

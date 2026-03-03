@@ -37,7 +37,7 @@ const AboutTeam = ({ team }: IAboutTeamProps) => {
     return (
         <div className="bg-white rounded-2xl p-6 space-y-4 leading-6 MYDeg">
             <h1 className="text-2xl font-bold">About {name}</h1>
-            <p>{name} live scores, players, season schedule and today’s results are available on Sofascore.</p>
+            <p>{name} live scores, players, season schedule and today’s results are available on Team Wolf.</p>
 
             <h2 className="text-xl font-semibold">{name} next match</h2>
             <p>

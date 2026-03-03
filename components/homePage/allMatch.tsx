@@ -53,13 +53,13 @@ const AllMatch = ({ matchs, setMatchs, currentMatch, setCurrentMatch, matchesDat
     }
 
     return (
-        <div className="w-full  bg-white ">
+        <div className="w-full bg-[#1b2124] text-white">
             {
                 !waitdata && <Shimmer1 />
             }
             {
                 waitdata && matchs.map((item, index) => (
-                    item.tournament.category.name != 'Israel' && <div key={index} className={` ${matchs[index].tournament.name == matchs[index + 1]?.tournament.name ? 'border-b-0' : 'border-b-[1px] border-[#b8b9bda7]'} py-1 w-full space-y-1 text-[14px]`}>
+                    item.tournament.category.name != 'Israel' && <div key={index} className={` ${matchs[index].tournament.name == matchs[index + 1]?.tournament.name ? 'border-b-0' : 'border-b-[1px] border-gray-700'} py-1 w-full space-y-1 text-[14px]`}>
                         {
                             matchs[index].tournament.name != matchs[index - 1]?.tournament.name &&
                             <div className="w-full flex">
@@ -73,10 +73,10 @@ const AllMatch = ({ matchs, setMatchs, currentMatch, setCurrentMatch, matchesDat
                                 <div className=" relative w-full flex justify-between pr-[60px] items-center">
                                     <div className="">
                                         <Link href={`/ma/tournament/soccer/${item.tournament.category.name}/${item.tournament.uniqueTournament.slug}/${item.tournament.uniqueTournament.id}`} className=" text-gray-400  hover:text-blue-600 text-[12px]"> {item.tournament.name}</Link>
-                                        <Link href={'/'} className=" text-gray-600  font-semibold hover:text-blue-600 text-[13px]"> {item.tournament.category.name}</Link>
+                                        <Link href={'/'} className=" text-gray-300 font-semibold hover:text-blue-600 text-[13px]"> {item.tournament.category.name}</Link>
                                     </div>
-                                    <button className=" absolute w-[50px] right-0 top-0 pl-1 flex  justify-center items-center  h-full  border-l-[1px] border-[#b8b9bda7] ">
-                                        <DisplayImage alt='' width={500} height={500} className="p-0.5 hover:bg-blue-100 w-8 h-8  rounded-md" src='/image/push-pin2.png' />
+                                    <button className=" absolute w-[50px] right-0 top-0 pl-1 flex  justify-center items-center  h-full  border-l-[1px] border-gray-700 ">
+                                        <DisplayImage alt='' width={500} height={500} className="p-0.5 hover:bg-gray-700 w-8 h-8  rounded-md" src='/image/push-pin2.png' />
                                     </button>
                                 </div>
                             </div>
@@ -89,11 +89,11 @@ const AllMatch = ({ matchs, setMatchs, currentMatch, setCurrentMatch, matchesDat
                                     setCurrentMatch(item)
                                 }
                             }}
-                            className={`  w-full flex items-center space-x-3  ${currentMatch?.id == item.id ? 'bg-slate-200' : 'hover:bg-custom-default-hover'}`}>
-                            <div className="w-[20%] text-[12px]   items-center border-r-[1px] border-[#b8b9bda7] opacity-50  ">
+                            className={`  w-full flex items-center space-x-3  ${currentMatch?.id == item.id ? 'bg-[#2c333a]' : 'hover:bg-[#2c333a]'} rounded-md transition-colors`}>
+                            <div className="w-[20%] text-[12px]   items-center border-r-[1px] border-gray-700 opacity-50  ">
                                 <DisplayEventDate event={item} />
                             </div>
-                            <div className=" relative w-full   flex  justify-between  items-center border--[1px]  pr-[60px] border-[#b8b9bda7]  text-[14px]">
+                            <div className=" relative w-full   flex  justify-between  items-center border--[1px]  pr-[60px] border-gray-700  text-[14px]">
                                 <div className="">
                                     <div className="flex space-x-1 items-center ">
                                         <DisplayImage className='w-4 h-4' alt={`team:${item.homeTeam.id}`} width={500} height={500} src={`https://api.sofascore.com/api/v1/team/${item.homeTeam.id}/image`} />

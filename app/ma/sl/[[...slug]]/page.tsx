@@ -1,6 +1,5 @@
 'use client'
 
-import AllLeagues from "@/components/homePage/AllLeagues";
 import CalendarCompPhone from "@/components/homePage/CalendarCompPhone";
 import MainComp from "@/components/homePage/MainComp";
 import { extractFormDate } from "@/utils/function";
@@ -8,7 +7,6 @@ import dayjs, { Dayjs } from "dayjs";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { useParams } from 'next/navigation'
-import Topleagues from "@/components/homePage/Topleagues";
 
 
 const getHash = () =>
@@ -52,19 +50,18 @@ const HashDisplay = () => {
 
 
 
+    useEffect(() => {
+        setMatchesDate(dayjs(date));
+    }, [date]);
+
     return (
         windowWidth < 992 ?
             <>
                 {hash === "#calendar" && <CalendarCompPhone />}
-                {hash === "#leagues" && <div className=" space-y-3">
-                    <Topleagues />
-                    <AllLeagues />
-                </div>
-                }
-                {!hash && <MainComp matchesDate={matchesDate} />}
+                {!hash && <MainComp matchesDate={matchesDate} setMatchesDate={setMatchesDate} />}
             </>
             :
-            <MainComp matchesDate={matchesDate} />
+            <MainComp matchesDate={matchesDate} setMatchesDate={setMatchesDate} />
     )
 }
 

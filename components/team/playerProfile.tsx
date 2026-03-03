@@ -21,8 +21,8 @@ const PlayerProfile = ({ player }: PlayerProfileProps) => {
             <p>{`${player.name} is ${moment(player.dateOfBirthTimestamp * 1000).format('YY')} years old (${moment(player.dateOfBirthTimestamp * 1000).format('ll')}), ${player.height} cm tall and plays for ${player.team.name}.`}</p>
             <p>{`${player.name} prefers to play with ${player.preferredFoot} foot. His jersey number is ${player.jerseyNumber}.`}</p>
             <p><Link href={'/'} className='text-blue-600'>{player.team.name}</Link>{` is playing their next match on Jul 5, 2024, 1:00:00 AM UTC against ${player.country.name} - Ecuador in Copa América.`}</p>
-            <p>If {player.name} is going to be in {player.team.name} lineup, it will be confirmed on Sofascore one hour before the match starts.</p>
-            <p>If {player.name} plays you will also be able to follow his live Sofascore rating, statistics and heatmap. {player.name} soccer player profile displays all matches and competitions with statistics for all the matches {player.name} played in. Most important stats for each competition, including average Sofascore rating, matches played, goals, assists, cards and other relevant data are also displayed.</p>
+            <p>If {player.name} is going to be in {player.team.name} lineup, it will be confirmed on Team Wolf one hour before the match starts.</p>
+            <p>If {player.name} plays you will also be able to follow his live Team Wolf rating, statistics and heatmap. {player.name} soccer player profile displays all matches and competitions with statistics for all the matches {player.name} played in. Most important stats for each competition, including average Team Wolf rating, matches played, goals, assists, cards and other relevant data are also displayed.</p>
             <p>{player.name} is contracted until {moment(player.contractUntilTimestamp * 1000).format('ll')}.</p>
         </div >
     )

@@ -106,10 +106,10 @@ const Footer = () => {
                 <div className=" w-full hidden tablet:flex  desktop:w-[1344px] tablet:w-[992px] space-x-14 py-10 text-white">
                     <div className="w-1/2  space-y-4">
                         <div className="text-xl ">About</div>
-                        <p className="text-[14px] font-normal  ">Live scores service at Sofascore livescore offers sports
+                        <p className="text-[14px] font-normal  ">Live scores service at Team Wolf livescore offers sports
                             live scores,
                             results and tables.
-                            Follow your favourite teams right here live! Live score on Sofascore.com livescore is
+                            Follow your favourite teams right here live! Live score on Team Wolf livescore is
                             automatically updated and you don{`'`}t need to refresh it manually. With adding games you want
                             to follow in {`"`}My games{`"`} following your matches livescores, results and statistics will be
                             even more simple.</p>
@@ -136,7 +136,7 @@ const Footer = () => {
                     >
                         <div className="flex items-center justify-center space-x-1 ">
                             <Image width={100} height={100} alt='club2' className=" w-8 h-8" src='/image/club2.png' />
-                            <div className=" text-3xl">sofascore</div>
+                            <div className=" text-3xl">Team Wolf</div>
                         </div>
                         <div className="w-full flex space-x-2 items-center justify-center">
                             <div className="">
@@ -150,7 +150,7 @@ const Footer = () => {
                             <div className="flex flex-col w-full items-center p-6 space-y-4">
                                 <div className=" w-full  flex justify-center space-x-2">
                                     <Image width={100} height={100} alt='club' className=" w-8 h-8" src='/image/club.png' />
-                                    <div className=" text-2xl">sofascore</div>
+                                    <div className=" text-2xl">Team Wolf</div>
                                 </div>
                                 <div className=" w-full flex  justify-center space-x-2">
                                     <Image width={100} height={100} alt='club' className=" w-6 h-6" src='/image/club.png' />
@@ -160,7 +160,7 @@ const Footer = () => {
                                 </div>
                             </div>
                             <button className="flex flex-col w-full bg-gray-900 bg-opacity-15  space-y-5 items-center p-10">
-                                <div className=" capitalize">download sofascore<br /> livescore app</div>
+                                <div className=" capitalize">download Team Wolf<br /> livescore app</div>
                                 <div className="flex flex-col space-y-3">
                                     <div className="w-36 h-10 bg-black rounded-sm flex justify-between items-center p-2">
                                         <Image width={100} height={100} alt='club' className=" w-7 h-7" src='/image/club.png' />
@@ -206,7 +206,7 @@ const Footer = () => {
                                 className="flex    
                     flex-col-reverse tablet:flex-row space-y-10 tablet:space-y-0 space-x-0 tablet:space-x-5 items-center w-full justify-center   text-[15px]">
                                 <div className=" w-full text-center tablet:w-1/4 whitespace-nowrap mt-8  tablet:mt-0">© 2024
-                                    Sofascore –
+                                    Team Wolf –
                                     All Rights
                                     Reserved.
                                 </div>
@@ -216,7 +216,7 @@ const Footer = () => {
                                     <button className="">SEND FEEDBACK</button>
                                     <button className="">ADVERTISE</button>
                                     <button className="">CONTACT</button>
-                                    <button className="">SOFASCORE LIVESCORE APP</button>
+                                    <button className="">TEAM WOLF LIVESCORE APP</button>
                                 </div>
                             </div>
                         </div>

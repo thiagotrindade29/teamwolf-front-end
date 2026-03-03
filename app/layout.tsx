@@ -7,7 +7,7 @@ import { PlayersStatisticCardsProvider } from "@/context/playersStatisticCardsCo
 import { WindowAttributesProvider } from "@/context/windowAttributes";
 import Head from "next/head";
 export const metadata: Metadata = {
-  title: "Sofa",
+  title: "Team Wolf",
   icons: {
     icon: ['/favicon.ico?v=4'],
     apple: ['/apple-touch-icon.png?v=4'],
@@ -26,7 +26,7 @@ export default function RootLayout({
       <Head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
       </Head>
-      <body className="bg-[#edf1f6]">
+      <body className="bg-black">
         <WindowAttributesProvider>
           <PlayersStatisticCardsProvider>
             <PlayerStatisticCard />

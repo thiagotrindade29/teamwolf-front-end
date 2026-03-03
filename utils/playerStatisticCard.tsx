@@ -122,7 +122,7 @@ const CardLayout = ({ length, user, index, animatedOut, windowWidth }: ICardLayo
                         <div className="scale-85">
                             <DisplayRating rating={rating} type='in' />
                         </div>
-                        <div className="text-xs">Sofascore Rating</div>
+                        <div className="text-xs">Team Wolf Rating</div>
                     </div>
                 </div>
             </div>

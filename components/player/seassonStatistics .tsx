@@ -230,7 +230,7 @@ const SeassonStatistics = ({ player }: { player: PlayerAPIJson | null }) => {
 
 			/>
 			{statistics && <div className="p-2 flex items-center justify-between">
-				<div className="font-semibold">Average Sofascore Rating</div>
+				<div className="font-semibold">Average Team Wolf Rating</div>
 				<div className="font-semibold flex items-center  space-x-2 scale-85">
 					{
 						<DisplayRating rating={statistics?.statistics.rating} type='out' />

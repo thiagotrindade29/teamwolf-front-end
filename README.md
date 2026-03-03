@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Sofa
 
 Sofa is a **Sofascore clone** that provides live scores, match statistics, and sports data using the **Sofascore API**. The app is built with **Next.js** and **Tailwind CSS**, ensuring a **fully responsive** experience across all devices.
@@ -64,3 +65,6 @@ This project is for educational and personal use. Not affiliated with Sofascore.
 
 Enjoy using Sofa! 🚀
 
+=======
+# teamwolf-front-end
+>>>>>>> 0277197dcd6cc4641da20b119a5e06cb8a505b02
