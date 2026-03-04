@@ -18,8 +18,8 @@ import EventTitle from '@/components/events/eventTitle'
 import MatchOverview from '@/components/homePage/matchOverview'
 import { useCurrentMatch } from '@/context/EventDateContext'
 import { StandingsAPIJson } from '@/interface/api/standings'
-const Page = () => {
 
+const Page = () => {
   const router = useRouter()
   const eventCustomId = usePathname().split('/')[3]
   const [waitdata, setwaitdata] = useState<string>('wait')
@@ -28,28 +28,34 @@ const Page = () => {
   const { currentMatch, setCurrentMatch } = useCurrentMatch();
 
   useEffect(() => {
+    // Garante que o código só rode no navegador
+    if (typeof window === "undefined") return;
+
     const getTheEvents = async () => {
       try {
+        // Agora é seguro acessar o window
         const eventId = window.location.hash.substring(4)
+
         const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/v1/event/${eventCustomId}/h2h/events`, {})
+
         if (response.ok) {
           const data = await response.json()
           const event_ = (data.events as EventAPIJson[]).find((it) => it.id == Number(eventId))
+
           if (event_) {
             setEvent(event_)
             setCurrentMatch(event_ as any)
-          }
-          else {
+          } else {
             router.push(`/ma/${data.events[0].slug}/${data.events[0].customId}#id:${data.events[0].id}`)
             setEvent(data.events[0])
             setCurrentMatch(data.events[0])
-
           }
         }
       } catch (error) {
         setwaitdata('error')
       }
     }
+
     getTheEvents()
   }, [router, eventCustomId, setCurrentMatch])
 

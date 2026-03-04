@@ -2,7 +2,11 @@
 
 const nextConfig = {
     images: {
-        domains: ['widgets.sofascore.com', 'api.sofascore.com', 'www.sofascore.app', 'sofascore.app', 'api.sofascore.app', "example.com", 'sofascore.com', 'www.sofascore.com', 'api.sofascore.app']
+        remotePatterns: [
+            { protocol: 'https', hostname: 'sofascore.com' },
+            { protocol: 'https', hostname: 'api.sofascore.app' },
+            { protocol: 'https', hostname: 'www.sofascore.com' },
+        ],
     },
     async redirects() {
         return [
@@ -16,3 +20,16 @@ const nextConfig = {
 };
 
 export default nextConfig;
+
+
+// /** @type {import('next').NextConfig} */
+// const nextConfig = {
+//   images: {
+//     remotePatterns: [
+//       { protocol: 'https', hostname: 'sofascore.com' },
+//       { protocol: 'https', hostname: 'api.sofascore.app' },
+//       { protocol: 'https', hostname: 'www.sofascore.com' },
+//     ],
+//   },
+// };
+// export default nextConfig;

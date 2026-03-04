@@ -67,10 +67,11 @@ const Navbar = () => {
                                     className='h-[250px] tablet:h-[110px] w-auto object-contain'
                                     width={400}
                                     height={250}
-                                    src="/image/tw-logo.png"
+                                    src="/tw-logo.png" // Caminho correto conforme sua estrutura de arquivos
                                     alt="Team Wolf"
                                 />
                             </Link>
+
                             <div className=" relative w-[360px] -left-10  desktop:left-0 hidden tablet:block">
                                 <Search
                                     waitData={waitData}
@@ -144,24 +145,26 @@ const Navbar = () => {
                     </div>
                 </div>
             </div>
-            {open && windowWidth < 992 && <div className="fixed top-4 z-20 pr-1 h-screen w-screen  flex justify-center">
-                <div className="relative z-10 h-10">
-                    <div className="relative z-0">
-                        <Search
-                            waitData={waitData}
-                            query={query}
-                            setQuery={setQuery}
-                            currentSearchOption={currentSearchOption}
-                            setSuggestions={setSuggestions}
-                            setCurrentSearchOption={setCurrentSearchOption}
-                            suggestions={suggestions} />
+            {
+                open && windowWidth < 992 && <div className="fixed top-4 z-20 pr-1 h-screen w-screen  flex justify-center">
+                    <div className="relative z-10 h-10">
+                        <div className="relative z-0">
+                            <Search
+                                waitData={waitData}
+                                query={query}
+                                setQuery={setQuery}
+                                currentSearchOption={currentSearchOption}
+                                setSuggestions={setSuggestions}
+                                setCurrentSearchOption={setCurrentSearchOption}
+                                suggestions={suggestions} />
+                        </div>
+                        <button onClick={() => setOpen(false)} className='10 h-10 flex justify-center items-center  bg-white z-10 absolute inset-y-0  right-2 rounded-xl'  >
+                            <Image src={'/image/clean.png'} width={30} height={30} alt="clean"></Image>
+                        </button>
                     </div>
-                    <button onClick={() => setOpen(false)} className='10 h-10 flex justify-center items-center  bg-white z-10 absolute inset-y-0  right-2 rounded-xl'  >
-                        <Image src={'/image/clean.png'} width={30} height={30} alt="clean"></Image>
-                    </button>
+                    <div onClick={() => setOpen(false)} className="h-full bg-slate-400 opacity-20 w-full absolute z-0"></div>
                 </div>
-                <div onClick={() => setOpen(false)} className="h-full bg-slate-400 opacity-20 w-full absolute z-0"></div>
-            </div>}
+            }
 
         </header >
     )
